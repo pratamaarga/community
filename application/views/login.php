@@ -29,22 +29,26 @@
 
 <body>
 
-
+	<!-- ========================================== CONTAINER ================================================ -->
 	<div class="container">
 	    <div class="row">
 	        <div class="col-md-4 col-md-offset-4">
 	            <div class="login-panel panel panel-default">
 	                <div class="panel-heading">
-	                <!-- login -->
+
+
+	                <!-- ================================= login =============================================== -->
 	                    <center><h3 class="panel-title">Sign In</h3></center>
 	                </div>
 	                <div class="panel-body">
 	                	<small id="login-empty-input" class="error">email or password cannot be empty <br>&nbsp;</small>
-	                	<!-- erorr massage -->
+
+	                	<!-- ================================= erorr massage ================================== -->
 	                	<?php if($alert): ?>
 	                		<small id="login-invalid-input" class="error">invalid email or password<br>&nbsp;</small>
 	                	<?php endif; ?>
-	                	<!-- form login -->
+
+	                	<!-- ================================= form login ======================================-->
 	                    <form role="form" method="post" onsubmit="return checkEmptyInput();" action="<?=base_url()?>authentication/login/">
 	                        <fieldset>
 	                            <div class="form-group">

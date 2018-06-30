@@ -27,7 +27,8 @@ class Admin extends CI_Controller {
         }
     }
 
-    // User List
+    // ===================== User List
+
     public function user_list(){
 
         $data = array(
@@ -43,7 +44,8 @@ class Admin extends CI_Controller {
 
     }
    
-    // 
+    // ======================= Delete
+    
     function deactivate_user($email,$id){
         $this->ajax_checking();
 
@@ -53,7 +55,8 @@ class Admin extends CI_Controller {
 
         echo json_encode($update);
     }
-    // Reset Password
+
+    // ======================= Reset Password
     function reset_user_password($email,$id){
         $this->ajax_checking();
 
@@ -64,7 +67,7 @@ class Admin extends CI_Controller {
         echo json_encode($update);
     }
 
-    // Acticity log
+    // ========================== Acticity log
     function activity_log(){
         $data = array(
             'formTitle' => 'Activity Log',
@@ -77,11 +80,20 @@ class Admin extends CI_Controller {
 
     }
 
-    // get activity log
+    // ============================= get activity log
     function get_activity_log(){
         $this->ajax_checking();
 
-        echo  json_encode( $this->admin_model->get_activity_log() );
+        echo json_encode( $this->admin_model->get_activity_log() );
+    }
+
+    // ============================= Dasboard 
+    function dashboard(){
+
+        $data["total_user"] = $this->Authentication_model->model_total_user();
+        echo json_encode($data);
+        
+        //$this->load->view("v_dashboard");
     }
 
 

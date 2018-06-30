@@ -52,6 +52,57 @@ class Authentication_model extends CI_Model {
         }
 
     }
+
+
+    //============================== API Android Model =====================================
+    //================================= Cek User ===================================
+
+    // cek User
+    public function cek_user($email, $password){
+
+        $this->db->where("email", trim($email));
+        $this->db->where("password", trim(md5($password)));
+
+        return $this->db->get("user")->num_rows();
+
+    }
+
+    // ============================= Get User ================================
+    // cek get user
+    public function get_user($email, $password){
+
+        $this->db->where("email", trim($email));
+        $this->db->where("password", trim(md5($password)));
+
+        return $this->db->get("user")->row();
+
+    }
+
+    // ============================== Total User =============================
+    // Model Total User
+    public function model_total_user(){
+
+        return $this->db->get("user")->num_rows();
+
+    }
+
+    // ============================== Total Postingan ========================
+    // total postingan 
+    public function model_total_posting(){
+
+        return $this->db->get("posting")->num_rows();
+    }
+
+    // ============================= Registration =============================
+    // regist
+    public function new_user($email, $password){
+
+            $this->db->insert("manulaend",$data);
+        }
+    
+
+
+// Penutup
 }
 
 /* End of file  */

@@ -42,6 +42,7 @@ class Admin_model extends CI_Model {
             return false;
     }
 
+    // Post Data
     function insert_user($postData){
 
         $validate = $this->validate_email($postData);
@@ -104,7 +105,7 @@ class Admin_model extends CI_Model {
 
     }
 
-    // deactive user
+    // deactive user (DELETE)
     function deactivate_user($email,$id){
 
         $data = array(

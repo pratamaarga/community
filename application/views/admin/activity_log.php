@@ -53,6 +53,7 @@
 
 <!-- load to view footer_view -->
 <?php $this->load->view('frame/footer_view') ?>
+
 <script type="text/javascript">
 
     window.onload = get_activity_log();

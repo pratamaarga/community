@@ -19,6 +19,7 @@ class Authentication extends CI_Controller {
             redirect(base_url("dashboard"));
         }else {
             $data = array('alert' => false);
+
             // load to view login
             $this->load->view('login',$data);
         }
@@ -30,6 +31,7 @@ class Authentication extends CI_Controller {
             redirect(base_url());
         }
     }
+
     // fungtion Login
     public function login(){
         $postData = $this->input->post();
@@ -53,6 +55,7 @@ class Authentication extends CI_Controller {
         }
      
     }
+    
     // function controller Chage pass
     function change_password(){
         $this->ajax_checking();
@@ -71,6 +74,42 @@ class Authentication extends CI_Controller {
         $this->session->sess_destroy();
         redirect(base_url());
     }
+
+    // ==============================================================
+    // Aunth APi
+
+    // auth login
+    // public function api_login(){
+
+    //     $countUser = $this->Authentication_model->cek_user($username, $password);
+    //     $takeUser = $this->Authentication_model->get_user($username, $password);
+
+    //     if($contUser>0){
+    //                                                             // nama Field
+    //         $this->session->set_userdata("sess_email", $takeUser->email);
+    //         $this->session->set_userdata("sess_id", $takeUser->user_id);
+    //         $this->session->set_userdata("sess_role_id", $takeUser->role);
+    //         $this->session->set_userdata("sess_logged", "logged");
+
+    //     $data["message"]="Ok";
+    //     $data["respone"]="200";
+    //     $data["email_resp"]= $this->session->userdata("sess_email");
+    //     $data["id_reps"]= $this->session->userdata("sess_id");
+
+    //     }
+    //     else{
+
+    //         $data['message']= "failed";
+    //         $data['respon']= "404";
+    //         $data['email_resp']= $this->session->userdata("sess_email");
+    //         $data["id_reps"]= $this->session->userdata("sess_id");
+
+    //     }
+
+    //     echo "json_encode($data)";
+
+    // }
+
 
 
 }

@@ -24,9 +24,8 @@
                         <li>
                             <a href="#"><i class="fa fa-user fa-fw"></i> User Activity<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li> <a href="<?=base_url('user/posting')?>">&raquo; Posting</a> </li>
-                                <li> <a href="<?=base_url('user/komen')?>">&raquo; Comment</a> </li>
-                                <li> <a href="#">&raquo; Real Post</a> </li>
+                                <li> <a href="<?=base_url('user/add_posting')?>">&raquo; Posting</a> </li>
+                                <li> <a href="<?=base_url('user/real_post.php')?>">&raquo; Real Post</a> </li>
                             </ul>
                         </li>
                   

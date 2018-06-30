@@ -37,7 +37,8 @@
 
 <body>
     <div class="overlay"></div>
-    <img id="loading"  width="250px" src="<?=base_url()?>assets/images/loading.gif" alt="Loading...">
+    <!-- Load Image -->
+    <!-- <img id="loading"  width="250px" src="<?=base_url()?>assets/images/loading.gif" alt="Loading..."> -->
 
     <div id="wrapper">
 
