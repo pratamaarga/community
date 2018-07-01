@@ -7,7 +7,7 @@ if (!defined('BASEPATH')) {
 class Api extends CI_Controller {
 
  // ===============================  Aunth Api =======================================
-    
+
 
     // ================================ Api login ====================================
     public function api_login($username,$password){
@@ -40,7 +40,7 @@ class Api extends CI_Controller {
 
         	}
 
-        	else if($countUser<1){/
+        	else if($countUser<1){
 
         				$data["message"]="Anda belum terdaftar";
 				        $data["respone"]="404";
@@ -65,7 +65,7 @@ class Api extends CI_Controller {
     // ================================ Api get posting ============================
      public function api_get_posting(){
 
-     	$data="";
+       	$data="";
         $q= $this->user_model->get_posting();
 
         if($q==null){
@@ -97,12 +97,12 @@ class Api extends CI_Controller {
             if($q==null){
 
                 $data['message']="Data user tidak ada";
-                $data['respone']="404";
+                $data['response']="404";
             }
 
             else {
 
-                $data['respone'] ="200";
+                $data['response'] ="200";
                 $data['post'] = $q;
             }
 
@@ -135,7 +135,7 @@ class Api extends CI_Controller {
 
         public function api_new_user($email, $password, $nama, $umur, $kota){
 
-        
+
             $getUser = $this->Authentication_model->new_user($email, $password);
 
             if($getUser>0){
@@ -153,20 +153,20 @@ class Api extends CI_Controller {
                  $data["confirm_pasword_reps"]=$this->session->userdata("sess_confirm_password");
                  $data["id_reps"]= $this->session->userdata("sess_id");
 
-            } 
+            }
                 else if($getUser['email']>0)
             {
                  $data["response"]=404;
                  $data["message"] = "Email anda sudah pernah didaftarkan !";
                  $data["email"] = $getUser->email;
-   
+
             }
                 else
             {
                  $data["response"]=404;
                  $data["message"] = "Koneksi gagal !";
             }
-            
+
                 echo json_encode($data);
             }
 
@@ -195,25 +195,6 @@ class Api extends CI_Controller {
 
 
 
-        
+
 // Penutup
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
